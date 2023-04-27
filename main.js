@@ -1,4 +1,3 @@
-"use strict";
 
 const options = ["rock", "paper", "scissors"];
 
@@ -9,11 +8,11 @@ function getComputerChoice() {
 
 function checkWinner(playerSelection, computerSelection) {
   if (playerSelection == computerSelection) {
-    return "Tie!";
+    return "It's a tie";
   } else if (
-    (playerSelection == "Rock" && computerSelection == "Scissors") ||
-    (playerSelection == "Paper" && computerSelection == "Rock") ||
-    (playerSelection == "Scissors" && computerSelection == "Paper")
+    (playerSelection == "rock" && computerSelection == "scissors") ||
+    (playerSelection == "paper" && computerSelection == "rock") ||
+    (playerSelection == "scissors" && computerSelection == "paper")
   ) {
     return "Player";
   } else {
@@ -23,7 +22,7 @@ function checkWinner(playerSelection, computerSelection) {
 
 function playRound(playerSelection, computerSelection) {
   const result = checkWinner(playerSelection, computerSelection);
-  if (result == "Tie") {
+  if (result == "It's a tie") {
     return "It's a tie";
   } else if (result == "Player") {
     return `You won! ${playerSelection} beats ${computerSelection}`;
@@ -34,6 +33,7 @@ function playRound(playerSelection, computerSelection) {
 
 function getPlayerChoice() {
   let validatedInput = false;
+
   while (validatedInput == false) {
     const choice = prompt("Rock Paper Scissors");
     if (choice == null) {
@@ -64,7 +64,7 @@ function game() {
 
   console.log(
     `Game over! You have ${scorePlayer} and computer has ${scoreComputer}!`
-  );
+  )
 
   if (scorePlayer > scoreComputer) {
     console.log("You win!");
